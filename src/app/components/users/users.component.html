@@ -1,0 +1,14 @@
+<input type="search" [formControl]="searchControl" name="searchControl" placeholder="Escribe el nombre de tu usuario" autocomplete="off">
+<ol>
+  @for (user of filteredUsers; track $index) {
+  <li>
+    <img [src]="user.image" [alt]="user.id" class="circle-image" />
+    <p>{{ user.firstName }} {{ user.maidenName }} {{ user.lastName }}</p>
+    <p>
+      <strong>
+        <a href="mailto:{{ user.email }}">{{ user.email }}</a>
+      </strong>
+    </p>
+  </li>
+  }
+</ol>
