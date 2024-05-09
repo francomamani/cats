@@ -1,0 +1,17 @@
+<form [formGroup]="productForm" (submit)="add()">
+    <section>
+        <label for="title">Titulo</label>
+        <input type="text" formControlName="title" name="title" id="title">
+    </section>
+    <section>
+        <label for="description">Descripcion</label>
+        <textarea id="description" formControlName="description" name="description"></textarea>
+    </section>
+    <section>
+        <label for="price">Precio</label>
+        <input type="number" step="1" formControlName="price" name="price" id="price">
+    </section>
+    <section>
+        <button type="submit" [disabled]="productForm.invalid">Guardar Producto</button>
+    </section>
+</form>
